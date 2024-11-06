@@ -1,0 +1,66 @@
+nav ul li {
+    display: inline-block;
+    padding-right: 10px;
+    background-color: aquamarine;
+}
+
+/* para sacar el subrayado */
+a {
+    text-decoration: none;
+}
+
+section {
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: 10px auto;
+}
+
+section article {
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+
+section article img {
+    width: 100%;
+}
+
+@media (min-width:320px){
+    body {
+        background-color: aqua;
+    }
+
+    section article {
+        width: 40%;
+        margin-left: 5%;
+        margin-right: 5%;
+        /* con float los articulos deberian flotar */
+        float: left; 
+    }
+
+    section {
+        overflow: hidden;
+    }
+
+    nav {
+        text-align: center;
+    }
+}
+
+/* tener en cuenta los % de los articulos. si fuera mas de 25% se mostraria
+    3 articulos en la primera linea */
+@media (min-width:1024px){
+    section article {
+        width: 22%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    nav {
+        text-align: right;
+    }
+
+    body {
+        background-color: bisque;
+    }
+
+}

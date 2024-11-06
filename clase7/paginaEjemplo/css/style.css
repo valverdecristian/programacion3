@@ -1,0 +1,79 @@
+/* Estilos generales para todo el sitio */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* estilo para el encabezado */
+
+header {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 2008 se discute una nueva forma de maquetacion, que las estructuras
+    sean mas flexibles. Despues se utilizo el flow, y en el 2011 sale
+    el borrador de flexbox, nueva tecnica para poder maquetar.
+    En el 2015 fue ofializado el flexbox */
+
+/* contenedor principal de los productos */
+.contenedor-productos {
+    display: flex; /* utilizamos flexbox para organizar los productos: un solo flujo */
+    flex-wrap: wrap; /* se organizan en varias filas */
+    justify-content: space-between; /* espacio uniforme entre productos */
+    padding: 20px;
+
+}
+
+.producto {
+    background-color: wheat;
+    width: 30%; /* cada producto ocupa un 30% del ancho del contenedor */
+    margin-bottom: 20px;
+    padding: 15p;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(223,23,23); /* añade una sombra sutil*/
+    box-sizing: border-box; /* incluimos padding en el ancho total */
+}
+
+.producto h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.producto p {
+    font-size: 1rem;
+    color: greenyellow;
+}
+
+.producto button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .producto {
+        width: 45%; /* dos productos por linea*/
+    }
+}
+
+@media (max-width: 480px){
+    .producto {
+        width: 100%; /* un producto por linea*/
+    }
+
+    header {
+        padding: 15px; /* ajustamos el padding del encabezado de moviles */
+    }
+
+    .contenedor-productos {
+        padding: 10px; /* 10px menos de padding en dispositivos pequeños */
+    }
+}

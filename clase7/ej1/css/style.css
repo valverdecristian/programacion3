@@ -1,0 +1,22 @@
+.caja {
+    width: 100%;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+/* estilos para pantalla mayores a 600 px */
+@media (min-width: 600px){
+    .caja{
+        background-color: green;
+    }
+}
+
+/* estilos para pantalla mayores a 1000 px */
+@media (min-width: 1000px){
+    .caja{
+        background-color: #ffc107;
+    }
+}
+
+/* primero se maqueta como para un celular: movil file */

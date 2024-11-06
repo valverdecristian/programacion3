@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h2>Hola soy un h2</h2>
+    <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit excepturi tempora dolor. Suscipit provident repellendus aut maiores vero repudiandae dignissimos dolores a doloremque, sint, sequi illo veritatis ex tempore animi!</p>
+    
+    <h3 class="nombre">texto a leer con innerHTML</h3>
+    <h3 class="modificar">texto a modificar con innerHTML</h3>
+    
+    <h2>Interactuando con el usuario</h2>
+    
+    <div class="contenedor">
+        
+    </div>
+
+    <form action="">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="miInput">
+    </form>
+
+
+    <script>
+        let alerta = "ALERT: va a frenar la navegacion y aparece un cartel de alerta con el mensaje enviado";
+        alert(alerta);
+        
+        let confirmacion = "CONFIRM: frena la navegacion y aparece un cartel de confirmacion, mostrando opciones, resultado almacenado en una variable";
+        let resultado_conf = confirm(confirmacion);
+
+        let prompt_var = "PROMPT: va a frenar la navegacion, aparece cartel de alerta y campo para responder";
+        let resultado_prompt = prompt(prompt_var);
+    </script>
+
+
+    <!-- como vincular JavaScript con HTML, siempre al final, para que el documento este cargado para cuando se lea el script  -->
+    <script src="./manipulacion_dom.js"></script>
+    <script src="./quuerySelector.js"></script>
+    <script src="./eventos.js"></script>
+    <script src="./timers.js"></script>
+</body>
+</html>

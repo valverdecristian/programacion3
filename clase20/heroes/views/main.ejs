@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("partials/head") %>
+
+<body>
+    <%- include("partials/navbar") %>
+    <h1>Lista de heroes:</h1>
+    <div>
+        <ul>
+            <% heroes.forEach(heroe => { %>
+                <li>
+                    <a href="/heroes/<%= heroe.id %>"><%= heroe.nombre %></a>
+                    <!-- Renderizar la imagen del héroe -->
+                    <div>
+                        <img src="<%= heroe.img %>" alt="<%= heroe.nombre %>" style="width: 25%;">
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <%- include("partials/scripts") %>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("partials/head") %>
+
+<body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+        <h1 class="my-4">Lista de héroes</h1>
+        <div class="row">
+            <% heroes.forEach(heroe => { %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <img src="<%= heroe.img %>" alt="<%= heroe.nombre %>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/heroes/<%= heroe.id %>"><%= heroe.nombre %></a></h5>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <h2>Filtrar por país:</h2>
+        <ul>
+            <li><a href="/heroes/pais/Reino%20Unido">Reino Unido</a></li>
+            <li><a href="/heroes/pais/Estados%20Unidos">Estados Unidos</a></li>
+        </ul>
+    </div>
+    <%- include("partials/scripts") %>
+</body>
+
+</html>

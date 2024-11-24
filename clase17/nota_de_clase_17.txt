@@ -1,0 +1,17 @@
+el lunes empezariamos con el tp
+
+# estructura de micro-servicios
+E-commerce tiene dos servicios -> ventas y envios.
+
+# patrones de diseño
+1) MVC (modelo vista controlador)
+- vista: codigo html, se genera en el backend y se envia al frontend
+- controlador: manejo de informacion para dar respuesta a nuestras vistas
+- modelo: informacion almacenada
+2) API Rest
+
+Los controladores
+
+Renderizar una vista
+
+Como crear un proyecto con express de manera mas dinamica: express generator

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head")%>
+
+    <body>
+        <h1>Hola estas en la concesionaria : <%=nombre%>
+        </h1>
+
+        <!--     agregar link a la vista sucursales -->
+        <p>Elegi alguna de nuestras <a href="/sucursales">Sucursales</a> y podras ver toda su info</p>
+
+        <ul>
+            <% if (concesionaria && concesionaria.length > 0) { %>
+                <% concesionaria.forEach(sucursal => { %>
+                    <li><a href="/sucursales/<%=sucursal.sucursal%>"><%=sucursal.sucursal%></a></li>
+                <% }) %>
+            <% } else { %>
+                <li>No hay sucursales disponibles.</li>
+            <% } %>
+        </ul>
+        
+
+    </body>
+
+</html>

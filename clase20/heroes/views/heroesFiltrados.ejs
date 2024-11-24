@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("partials/head") %>
+
+<body>
+    <%- include("partials/navbar") %>
+    <h1>Héroes de <%= pais %>:</h1>
+    <div>
+        <ul>
+            <% heroes.forEach(heroe => { %>
+                <li>
+                    <a href="/heroes/<%= heroe.id %>"><%= heroe.nombre %></a>
+                    <div>
+                        <img src="<%= heroe.img %>" alt="<%= heroe.nombre %>" style="width: 100px; height: auto;">
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <%- include("partials/scripts") %>
+</body>
+
+</html>

@@ -27,7 +27,7 @@ const traerUnPost = async (req, res)=>{
 const crearPosteo = async (req,res)=>{
     try {
         await postsModel.create(req.body)
-        console.log("registro creado correctamente");
+        res.json("registro creado correctamente");
         
     } catch (error) {
         res.json({message:error.message});
@@ -35,5 +35,28 @@ const crearPosteo = async (req,res)=>{
 }
 
 // me falta actualizar un posteo y eliminar un posteo
+// Función para actualizar un posteo. Update - método PUT
+const actualizarPosteo = async (req, res) => {
+    try {
+        const posteo = await postsModel.update(req.body, {
+            where: { id: req.params.id }
+        });
+        res.json("Registro actualizado correctamente");
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+};
 
-module.exports = {traerPosteos, traerUnPost, crearPosteo};
+// Función para eliminar un posteo. Delete - método DELETE
+const eliminarPosteo = async (req, res) => {
+    try {
+        await postsModel.destroy({
+            where: { id: req.params.id }
+        });
+        res.json("Registro eliminado correctamente");
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+};
+
+module.exports = {traerPosteos, traerUnPost, crearPosteo, actualizarPosteo, eliminarPosteo};

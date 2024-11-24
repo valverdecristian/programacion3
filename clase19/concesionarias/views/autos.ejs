@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head")%>
+
+    <body>
+
+        <% autos.forEach(auto=>{%>
+            <h2>
+                Marca: <a href="/autos/<%=auto.marca%>"><%=auto.marca%></a>
+            </h2>
+            <p>
+                Modelo: <a href="<%=auto.modelo%>"><%=auto.modelo%></a>
+            </p>
+            <p>
+                Año: <a href="<%=auto.anio%>"><%=auto.anio%></a>
+            </p>
+            <p>
+                Color: <a href="<%=auto.color%>"><%=auto.color%></a>
+            </p>
+            <div>
+                <img src="<%=auto.img%>" alt="<%=auto.modelo%>" style="width: 25%;">
+            </div>
+        <% }) %>
+
+        <h3>Total de autos: <%= autos.length %></h3>
+
+    </body>
+
+</html>

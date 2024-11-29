@@ -1,0 +1,46 @@
+---
+para inicializar un proyecto:
+npm init -y | para crear el package.json
+---
+en la carpeta concesionarias usamos el comando:
+npm i express ejs | para instalar los módulos que vamos a usar
+---
+ORDEN DE ARCHIVOS A ANALIZAR:
+en la carpeta "concesionarias" tenemos los siguientes archivos:
+index.js
+routes/mainRoutes.js
+controllers/mainControllers.js
+view/main.ejs
+
+index.js (voy al index y agrego el use para sucursales)
+routes/sucursalesRouter.js
+controllers/sucursalesControllers.js
+view/sucursales.ejs
+---
+<< PASOS PRINCIPALES en index.js >>
+const express = require ("express");
+const path = require ("path");
+const port = 3000;
+const app = express()
+---
+<< VISTA en main.ejs >>
+nos fijamos lo que se va a compartir en todas las vistas y creo por ejemplo un encabezado que se va a compartir con todas las vistas (partials/head.ejs)
+--- <<<<<<<<<<<<<<<<<<<<<< importante >>>>>>>>>>>>>>>>>>>>>
+punto extra para el proyecto, relacionar las tablas de autor con la tabla de temática libre que vamos a elegir nosotros.
+---
+realizar un readme de como levantar el proyecto, documentar las rutas, cual es el path de la ruta, que tiene que recibir, que tiene que devolver.
+---
+falta manejo de errores, osea try-catch.
+manejo de fallas de datos en un array, osea if-else.
+---
+documentar las 9 rutas
+---
+dos CRUD uno para mi modelo y otro para el modelo autor
+---
+si tengo 100 productos voy a querer que me traiga de a 10 (como el típico paginado) consultas secualizate
+---
+documentar la api <readme.md>
+---
+dos JSON
+---
+Principal hace referencia a la otra base de datos que debería tener en el proyecto

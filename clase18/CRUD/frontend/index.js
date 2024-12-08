@@ -10,15 +10,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const fetchPosteos = async () => {
         try {
             const respuesta = await axios(`http://localhost:3030/posteos`);
-            // console.log(respuesta.data);
+            // console.log(respuesta.data); // axios en data me trae el json
             const posteos = respuesta.data;
 
             // limpiar la tabla antes de agregar los nuevos datos
             bodyTablaPosteos.innerHTML = "";
 
             posteos.forEach(posteo=>{
+
+                // creo una nueva fila
                 const fila = document.createElement("tr");
 
+                // en esa fila tengo que crear celdas
                 const celdaTitulo = document.createElement("td");
                 const celdaContenido = document.createElement("td");
                 const celdaAcciones = document.createElement("td");
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 const botonEditar = document.createElement("button");
                 botonEditar.textContent = "Editar";
                 botonEditar.addEventListener("click", ()=>{
+                    // redirigir a la pagina de edicion
                     window.location.href = `edit.html?id=${posteo.id}`;
                 })
 
@@ -54,10 +58,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
             })
             
         } catch (error) {
+            // error pinta de color rojo la consola
             console.error(`error al obtener los post: ${error}`);
         }
     }
 
+    // funcion para eliminar un posteo
+    const borrarPosteo = async (id) => {
+        try {
+            await axios.delete(`http://localhost:3030/posteos/${id}`);
+            fetchPosteos();
+        } catch (error) {
+            
+        }
+    }
+
+    // funcion para crear un nuevo posteo
     formCrearPosteo.addEventListener("submit", async function(evento){
 
         // preventDefault detiene el evento predeterminado
@@ -70,17 +86,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         try {
             await axios.post(`http://localhost:3030/posteos`, nuevoPosteo)
-
             formCrearPosteo.reset();
-            
             fetchPosteos();
-
         } catch (error) {
             console.error(`error al postear: ${error}`)
         }
     })
 
-
-
-
+    fetchPosteos();
 })
